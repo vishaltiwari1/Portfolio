@@ -1,39 +1,3 @@
-<?php
-
-if(isset($_POST['submit'])) 
-{
-$to = "tiwariv617@gmail"; // this is your Email address S
-$from = "riteshvishwakarma588@gmail.com"; // this is the sender's Email address
-
-$first_name= "Test";
-$last_name ="Testing";
-
-$subject ="Form submission";
-
-$subject2 = "Copy of your form submission";
-
-$message =$first_name. " ".$last_name. "wrote the following:" "in\n" "Testing";
-
-$message2= "Copy of Message ";
-$headers="From:" .$form;
-
-$headers2=" From:"$to;
-
-$result= mail($to, $subject, $message,$headers);
-
-mail($from, $subject2, $message2, $headers2); // sends a copy of the message to the sender
-
-if($result)
-{
-
-echo "Mail Sent. Thank you."
-}
-else
-{
-echo "SORRY THERE IS AN ERROR IN SENDING MAIL";
-}}>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -508,18 +472,19 @@ echo "SORRY THERE IS AN ERROR IN SENDING MAIL";
                 <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-6">Get In Touch</h6>
-                    <form action="index.php">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="contact-message" id="" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
-                    </form>
+                    <form action="https://formkeep.com/f/ab0761b6a692" method="post">
+						<!-- Your form fields here -->
+							<div class="form-group">
+								<input type="email" class="form-control" name="_replyto" placeholder="Enter email" required>
+							</div>
+							<!--<div class="form-group">
+								<input type="password" class="form-control" name="password" placeholder="Password" required>
+							</div>-->
+							<div class="form-group">
+								<textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
+					</form>
                 </div>
 				<div class="contact-infos">
                     <div class="item">
