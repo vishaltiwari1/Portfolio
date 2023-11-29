@@ -11537,7 +11537,7 @@ pre {
     margin-top: 0;
   }
   .header .container .img-holder {
-    display: none;
+    display: inline;
   }
 }
 
