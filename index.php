@@ -508,7 +508,7 @@ echo "SORRY THERE IS AN ERROR IN SENDING MAIL";
                 <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-6">Get In Touch</h6>
-                    <form action="index.html">
+                    <form action="index.php">
                         <div class="form-group">
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                         </div>
