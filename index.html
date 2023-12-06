@@ -483,18 +483,19 @@
                 <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-6">Get In Touch</h6>
-                    <form action="https://formkeep.com/f/ab0761b6a692" method="post">
-						<!-- Your form fields here -->
-							<div class="form-group">
-								<input type="email" class="form-control" name="_replyto" placeholder="Enter email" required>
-							</div>
-							<!--<div class="form-group">
-								<input type="password" class="form-control" name="password" placeholder="Password" required>
-							</div>-->
-							<div class="form-group">
-								<textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-							</div>
-							<button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
+                    <!-- Your HTML form with the modified onsubmit attribute -->
+					<form id="myForm" action="https://formkeep.com/f/ab0761b6a692" method="post" onsubmit="submitForm()">
+					<!-- Your form fields here -->
+					<div class="form-group">
+						<input type="email" class="form-control" name="_replyto" placeholder="Enter email" required>
+					</div>
+					<!--<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password" required>
+					</div>-->
+					<div class="form-group">
+						<textarea name="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
 					</form>
                 </div>
 				<div class="contact-infos">
@@ -562,6 +563,40 @@
 
     <!-- steller js -->
     <script src="assets/js/steller.js"></script>
+	<!-- Include this script at the end of your HTML body -->
+<script>
+  // Function to handle form submission
+  function submitForm() {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Get the form element
+    const form = document.getElementById('myForm');
+
+    // Your Formspree endpoint
+    const formAction = 'https://formkeep.com/f/ab0761b6a692';
+
+    // Perform the form submission using Fetch API
+    fetch(formAction, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+      .then(response => {
+        // Check if the submission was successful (status code 200-299)
+        if (response.ok) {
+          // Show a pop-up message
+          alert('Message sent successfully!');
+        } else {
+          // Show an error pop-up if the submission failed
+          alert('Error sending message. Please try again later.');
+        }
+      })
+      .catch(error => {
+        // Show an error pop-up for any unexpected errors
+        alert('Error: ' + error.message);
+      });
+  }
+</script>
 
 </body>
 </html>
